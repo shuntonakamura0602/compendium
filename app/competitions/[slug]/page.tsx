@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CompetitionHeader from "@/components/CompetitionHeader";
 import DatasetSection from "@/components/DatasetSection";
+import DiscussionList from "@/components/DiscussionList";
 import EvaluationSection from "@/components/EvaluationSection";
+import InsightsSection from "@/components/InsightsSection";
+import NotebookList from "@/components/NotebookList";
 import OverviewSection from "@/components/OverviewSection";
+import SolutionList from "@/components/SolutionList";
 import SectionNav, { type SectionNavItem } from "@/components/SectionNav";
 import { getCompetitionBySlug, getCompetitionSlugs } from "@/lib/competitions";
 
@@ -11,6 +15,10 @@ const sections: SectionNavItem[] = [
   { id: "overview", label: "Overview" },
   { id: "evaluation", label: "Evaluation" },
   { id: "dataset", label: "Dataset" },
+  { id: "insights", label: "Insights" },
+  { id: "discussions", label: "Discussions" },
+  { id: "solutions", label: "Solutions" },
+  { id: "notebooks", label: "Notebooks" },
 ];
 
 export function generateStaticParams() {
@@ -44,6 +52,14 @@ export default async function CompetitionPage({
       <OverviewSection competition={competition} />
       <EvaluationSection competition={competition} />
       <DatasetSection files={competition.datasets} />
+      <InsightsSection competition={competition} />
+      <DiscussionList discussions={competition.discussions} />
+      <SolutionList solutions={competition.solutions} />
+      <NotebookList notebooks={competition.notebooks} />
+      <InsightsSection competition={competition} />
+      <DiscussionList discussions={competition.discussions} />
+      <SolutionList solutions={competition.solutions} />
+      <NotebookList notebooks={competition.notebooks} />
     </div>
   );
 }

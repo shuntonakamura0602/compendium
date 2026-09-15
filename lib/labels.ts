@@ -1,6 +1,8 @@
 import type {
   CompetitionCategory,
   CompetitionStatus,
+  InsightType,
+  NotebookCategory,
   TaskType,
 } from "@/types/competition";
 
@@ -42,3 +44,29 @@ export function isCategory(value: unknown): value is CompetitionCategory {
 export function isStatus(value: unknown): value is CompetitionStatus {
   return typeof value === "string" && value in statusLabels;
 }
+
+/** Insight groups in display order (spec §8). */
+export const insightTypeLabels: Record<InsightType, string> = {
+  cv_strategy: "CV Strategy",
+  baseline: "Strong Baseline",
+  pitfall: "Common Pitfalls",
+  leakage: "Data Leakage",
+  metric: "Metric Notes",
+  dataset: "Dataset Notes",
+  faq: "FAQ",
+};
+
+export const insightTypeValues = Object.keys(insightTypeLabels) as InsightType[];
+
+/** Notebook groups in display order (spec §10). */
+export const notebookCategoryLabels: Record<NotebookCategory, string> = {
+  baseline: "Baseline",
+  eda: "EDA",
+  feature_engineering: "Feature Engineering",
+  modeling: "Modeling",
+  inference: "Inference",
+};
+
+export const notebookCategoryValues = Object.keys(
+  notebookCategoryLabels,
+) as NotebookCategory[];
