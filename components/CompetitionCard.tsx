@@ -1,11 +1,7 @@
 import Link from "next/link";
 import type { Competition } from "@/types/competition";
-import {
-  categoryLabels,
-  formatNumber,
-  statusLabels,
-  taskTypeLabels,
-} from "@/lib/labels";
+import { categoryLabels, statusLabels, taskTypeLabels } from "@/lib/labels";
+import { formatNumber } from "@/lib/format";
 
 export default function CompetitionCard({
   competition,

@@ -42,7 +42,3 @@ export function isCategory(value: unknown): value is CompetitionCategory {
 export function isStatus(value: unknown): value is CompetitionStatus {
   return typeof value === "string" && value in statusLabels;
 }
-
-export function formatNumber(value: number): string {
-  return new Intl.NumberFormat("en-US").format(value);
-}
