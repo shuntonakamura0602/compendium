@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens (spec §23: Developer Tool / Knowledge Base look)
+ * Background: white / near-white, Text: dark gray, Accent: Kaggle blue.
+ */
+@theme {
+  --color-background: #ffffff;
+  --color-surface: #fafafa;
+  --color-border: #e5e7eb;
+  --color-foreground: #171717;
+  --color-muted: #6b7280;
+  --color-accent: #20beff;
+  --color-accent-strong: #0a84c1;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
+    monospace;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
