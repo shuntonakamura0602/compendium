@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import AgentContext from "@/components/AgentContext";
 import CompetitionHeader from "@/components/CompetitionHeader";
 import DatasetSection from "@/components/DatasetSection";
 import DiscussionList from "@/components/DiscussionList";
@@ -10,6 +11,8 @@ import OverviewSection from "@/components/OverviewSection";
 import SolutionList from "@/components/SolutionList";
 import SectionNav, { type SectionNavItem } from "@/components/SectionNav";
 import { getCompetitionBySlug, getCompetitionSlugs } from "@/lib/competitions";
+import { generateAgentContext } from "@/lib/generateAgentContext";
+import { siteUrl } from "@/lib/site";
 
 const sections: SectionNavItem[] = [
   { id: "overview", label: "Overview" },
@@ -19,6 +22,7 @@ const sections: SectionNavItem[] = [
   { id: "discussions", label: "Discussions" },
   { id: "solutions", label: "Solutions" },
   { id: "notebooks", label: "Notebooks" },
+  { id: "agent", label: "Agent" },
 ];
 
 export function generateStaticParams() {
@@ -45,6 +49,8 @@ export default async function CompetitionPage({
   const competition = getCompetitionBySlug(slug);
   if (!competition) notFound();
 
+  const agentContext = generateAgentContext(competition, { siteUrl });
+
   return (
     <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
       <CompetitionHeader competition={competition} />
@@ -56,10 +62,12 @@ export default async function CompetitionPage({
       <DiscussionList discussions={competition.discussions} />
       <SolutionList solutions={competition.solutions} />
       <NotebookList notebooks={competition.notebooks} />
+      <AgentContext markdown={agentContext} />
       <InsightsSection competition={competition} />
       <DiscussionList discussions={competition.discussions} />
       <SolutionList solutions={competition.solutions} />
       <NotebookList notebooks={competition.notebooks} />
+      <AgentContext markdown={agentContext} />
     </div>
   );
 }
