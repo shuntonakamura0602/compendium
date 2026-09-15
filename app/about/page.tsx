@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Compendium collects everything about a Kaggle competition into one page for humans and AI coding agents.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

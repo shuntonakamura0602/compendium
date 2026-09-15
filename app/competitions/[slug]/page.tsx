@@ -36,9 +36,16 @@ export async function generateMetadata({
   const competition = getCompetitionBySlug(slug);
   if (!competition) return { title: "Competition not found" };
 
+  const title = `${competition.title} Solutions & Discussions`;
+  const description = `Explore the ${competition.title} Kaggle competition, including important discussions, top solutions, notebooks and AI agent-ready context.`;
+  const url = `/competitions/${competition.slug}`;
+
   return {
-    title: `${competition.title} Solutions & Discussions`,
-    description: `Explore the ${competition.title} Kaggle competition, including important discussions, top solutions, notebooks and AI agent-ready context.`,
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { type: "article", title, description, url },
+    twitter: { title, description },
   };
 }
 
@@ -58,11 +65,6 @@ export default async function CompetitionPage({
       <OverviewSection competition={competition} />
       <EvaluationSection competition={competition} />
       <DatasetSection files={competition.datasets} />
-      <InsightsSection competition={competition} />
-      <DiscussionList discussions={competition.discussions} />
-      <SolutionList solutions={competition.solutions} />
-      <NotebookList notebooks={competition.notebooks} />
-      <AgentContext markdown={agentContext} />
       <InsightsSection competition={competition} />
       <DiscussionList discussions={competition.discussions} />
       <SolutionList solutions={competition.solutions} />

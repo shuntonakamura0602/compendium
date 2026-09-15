@@ -10,7 +10,7 @@ export default function SectionNav({ items }: { items: SectionNavItem[] }) {
       aria-label="Page sections"
       className="sticky top-0 z-10 -mx-4 border-b border-border bg-background/95 backdrop-blur sm:-mx-6"
     >
-      <ul className="flex gap-1 overflow-x-auto px-4 py-2 text-sm sm:px-6">
+      <ul className="flex gap-1 overflow-x-auto px-4 py-2 text-sm [mask-image:linear-gradient(to_right,black_calc(100%-2rem),transparent)] sm:px-6 sm:[mask-image:none]">
         {items.map((item) => (
           <li key={item.id} className="shrink-0">
             <a

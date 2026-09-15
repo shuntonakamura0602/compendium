@@ -42,6 +42,8 @@ export default function CompetitionFilters({
         ))}
       </FilterGroup>
 
+      <span aria-hidden className="hidden h-4 w-px bg-border sm:block" />
+
       <FilterGroup label="Category">
         {categoryValues.map((value) => (
           <Chip
@@ -95,7 +97,7 @@ function Chip({
   return (
     <Link
       href={href}
-      aria-pressed={active}
+      aria-current={active ? "true" : undefined}
       className={`rounded-full px-3 py-1 text-xs font-medium ring-1 transition-colors ${
         active
           ? "bg-foreground text-background ring-foreground"

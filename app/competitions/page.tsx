@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Competitions",
   description:
     "Browse Kaggle competitions with curated discussions, top solutions, notebooks and agent-ready context.",
+  alternates: { canonical: "/competitions" },
 };
 
 function first(value: string | string[] | undefined): string | undefined {
