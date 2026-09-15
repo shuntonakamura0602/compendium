@@ -120,9 +120,9 @@ export interface Competition {
   /** e.g. "Higher is better." */
   metricDescription?: string;
 
-  /** ISO dates (YYYY-MM-DD). */
+  /** ISO dates (YYYY-MM-DD). endDate is omitted for rolling "Getting Started" competitions. */
   startDate: string;
-  endDate: string;
+  endDate?: string;
   prize?: string;
   teamCount?: number;
   status: CompetitionStatus;

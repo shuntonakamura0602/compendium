@@ -70,7 +70,7 @@ export function generateAgentContext(
     `Status: ${c.status}`,
     `Category: ${words(c.category)}`,
     `Task type: ${words(c.taskType)}`,
-    `Timeline: ${c.startDate} to ${c.endDate}`,
+    `Timeline: ${c.startDate} to ${c.endDate ?? "ongoing (no deadline)"}`,
     ...(c.teamCount !== undefined ? [`Teams: ${num(c.teamCount)}`] : []),
     ...(c.prize ? [`Prize: ${c.prize}`] : []),
     ...(c.tags.length ? [`Tags: ${c.tags.join(", ")}`] : []),

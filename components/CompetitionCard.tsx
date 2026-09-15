@@ -8,7 +8,7 @@ export default function CompetitionCard({
 }: {
   competition: Competition;
 }) {
-  const year = competition.endDate.slice(0, 4);
+  const year = (competition.endDate ?? competition.startDate).slice(0, 4);
 
   return (
     <Link

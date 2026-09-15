@@ -28,7 +28,11 @@ export default function OverviewSection({
             </div>
             <div>
               <dt className="text-xs text-muted">Deadline</dt>
-              <dd className="mt-0.5">{formatDate(competition.endDate)}</dd>
+              <dd className="mt-0.5">
+                {competition.endDate
+                  ? formatDate(competition.endDate)
+                  : "None (rolling leaderboard)"}
+              </dd>
             </div>
           </dl>
         </Block>

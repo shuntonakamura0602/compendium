@@ -16,7 +16,9 @@ export default function CompetitionHeader({
     ...(competition.prize ? [{ label: "Prize", value: competition.prize }] : []),
     {
       label: "Timeline",
-      value: `${formatDate(competition.startDate)} – ${formatDate(competition.endDate)}`,
+      value: `${formatDate(competition.startDate)} – ${
+        competition.endDate ? formatDate(competition.endDate) : "Ongoing"
+      }`,
     },
   ];
 
