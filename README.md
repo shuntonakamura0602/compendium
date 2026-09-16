@@ -15,7 +15,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 Set `NEXT_PUBLIC_SITE_URL` (see `.env.example`) to the public origin so that
 canonical URLs, Open Graph tags, `sitemap.xml` and the generated agent
-context point at the deployed site.
+context point at the deployed site. On Vercel this is optional: the build
+falls back to the deployment URL Vercel injects.
 
 ## Quality checks
 
