@@ -40,7 +40,16 @@ export default async function Image({
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 30, color: "#6b7280" }}>
-          <div style={{ width: 32, height: 32, borderRadius: 8, background: "#20beff" }} />
+          <svg viewBox="0 0 64 64" width="32" height="32">
+            <rect width="64" height="64" rx="14" fill="#20beff" />
+            <path
+              d="M43.5 21.5A15.5 15.5 0 1 0 43.5 42.5"
+              fill="none"
+              stroke="#ffffff"
+              strokeWidth="8"
+              strokeLinecap="round"
+            />
+          </svg>
           {siteName}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>

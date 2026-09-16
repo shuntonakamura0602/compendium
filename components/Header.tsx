@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 const navItems = [
   { href: "/competitions", label: "Competitions" },
@@ -13,10 +14,7 @@ export default function Header() {
           href="/"
           className="flex items-center gap-2 text-base font-semibold tracking-tight"
         >
-          <span
-            aria-hidden
-            className="inline-block h-5 w-5 rounded bg-accent"
-          />
+          <Logo />
           Compendium
         </Link>
         <nav aria-label="Main">

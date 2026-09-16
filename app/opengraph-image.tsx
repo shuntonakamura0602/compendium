@@ -22,14 +22,16 @@ export default function Image() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div
-            style={{
-              width: 44,
-              height: 44,
-              borderRadius: 10,
-              background: "#20beff",
-            }}
-          />
+          <svg viewBox="0 0 64 64" width="44" height="44">
+            <rect width="64" height="64" rx="14" fill="#20beff" />
+            <path
+              d="M43.5 21.5A15.5 15.5 0 1 0 43.5 42.5"
+              fill="none"
+              stroke="#ffffff"
+              strokeWidth="8"
+              strokeLinecap="round"
+            />
+          </svg>
           <div style={{ fontSize: 44, fontWeight: 600 }}>{siteName}</div>
         </div>
         <div
