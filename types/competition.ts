@@ -134,6 +134,8 @@ export interface Competition {
   rules: string[];
 
   datasets: DatasetFile[];
+  /** Free-text note shown above the file list, e.g. when data is no longer available. */
+  datasetNote?: string;
   discussions: Discussion[];
   insights: Insight[];
   solutions: Solution[];

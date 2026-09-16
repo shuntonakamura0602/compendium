@@ -64,7 +64,10 @@ export default async function CompetitionPage({
       <SectionNav items={sections} />
       <OverviewSection competition={competition} />
       <EvaluationSection competition={competition} />
-      <DatasetSection files={competition.datasets} />
+      <DatasetSection
+        files={competition.datasets}
+        note={competition.datasetNote}
+      />
       <InsightsSection competition={competition} />
       <DiscussionList discussions={competition.discussions} />
       <SolutionList solutions={competition.solutions} />

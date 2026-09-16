@@ -90,6 +90,7 @@ export function generateAgentContext(
 
   // --- Dataset --------------------------------------------------------------
   section("Dataset");
+  if (c.datasetNote) para(c.datasetNote);
   if (c.datasets.length === 0) {
     para("No dataset information available.");
   } else {

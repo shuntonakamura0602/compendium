@@ -10,13 +10,24 @@ function fileMeta(f: DatasetFile): string[] {
   ].filter((m): m is string => m !== null);
 }
 
-export default function DatasetSection({ files }: { files: DatasetFile[] }) {
+export default function DatasetSection({
+  files,
+  note,
+}: {
+  files: DatasetFile[];
+  note?: string;
+}) {
   return (
     <Section
       id="dataset"
       title="Dataset"
       description={`${files.length} ${files.length === 1 ? "file" : "files"}`}
     >
+      {note && (
+        <p className="mb-4 rounded-md border border-border bg-surface px-4 py-3 text-sm text-foreground/80">
+          {note}
+        </p>
+      )}
       {files.length === 0 ? (
         <p className="text-sm text-muted">No dataset information yet.</p>
       ) : (
