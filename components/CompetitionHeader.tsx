@@ -48,6 +48,7 @@ export default function CompetitionHeader({
       </p>
 
       <ExternalLink
+        kind="kaggle"
         href={competition.kaggleUrl}
         className="mt-4 inline-block text-sm font-medium"
       >

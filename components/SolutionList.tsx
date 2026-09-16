@@ -30,7 +30,7 @@ export default function SolutionList({ solutions }: { solutions: Solution[] }) {
                   #{s.rank}
                 </span>
                 <span className="font-semibold">{s.teamName}</span>
-                <ExternalLink href={s.url} className="text-sm">
+                <ExternalLink kind="solution" href={s.url} className="text-sm">
                   {s.title} →
                 </ExternalLink>
               </div>
@@ -61,10 +61,14 @@ export default function SolutionList({ solutions }: { solutions: Solution[] }) {
               {(s.githubUrl || s.notebookUrl) && (
                 <p className="mt-4 flex gap-4 text-sm">
                   {s.githubUrl && (
-                    <ExternalLink href={s.githubUrl}>GitHub</ExternalLink>
+                    <ExternalLink kind="github" href={s.githubUrl}>
+                      GitHub
+                    </ExternalLink>
                   )}
                   {s.notebookUrl && (
-                    <ExternalLink href={s.notebookUrl}>Notebook</ExternalLink>
+                    <ExternalLink kind="notebook" href={s.notebookUrl}>
+                      Notebook
+                    </ExternalLink>
                   )}
                 </p>
               )}

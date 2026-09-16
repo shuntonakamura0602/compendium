@@ -33,7 +33,7 @@ export default function DiscussionList({
               </span>
               <div className="min-w-0 flex-1">
                 <h3 className="font-medium leading-snug">
-                  <ExternalLink href={d.url} className="text-foreground">
+                  <ExternalLink kind="discussion" href={d.url} className="text-foreground">
                     {d.title}
                   </ExternalLink>
                 </h3>

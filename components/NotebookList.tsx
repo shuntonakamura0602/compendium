@@ -40,7 +40,11 @@ export default function NotebookList({ notebooks }: { notebooks: Notebook[] }) {
                     className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 p-3 scroll-mt-28"
                   >
                     <div className="min-w-0">
-                      <ExternalLink href={n.url} className="font-medium text-foreground">
+                      <ExternalLink
+                        kind="notebook"
+                        href={n.url}
+                        className="font-medium text-foreground"
+                      >
                         {n.title}
                       </ExternalLink>
                       <p className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-muted">

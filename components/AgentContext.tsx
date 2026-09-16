@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { trackCopyContext } from "@/lib/analytics";
 
 type CopyState = "idle" | "copied" | "error";
 
@@ -8,7 +9,13 @@ type CopyState = "idle" | "copied" | "error";
  * "Copy Context" card (spec §11, §30). Receives the pre-generated Markdown from
  * the server component so the generator never ships to the client.
  */
-export default function AgentContext({ markdown }: { markdown: string }) {
+export default function AgentContext({
+  competition,
+  markdown,
+}: {
+  competition: string;
+  markdown: string;
+}) {
   const [state, setState] = useState<CopyState>("idle");
 
   useEffect(() => {
@@ -21,6 +28,7 @@ export default function AgentContext({ markdown }: { markdown: string }) {
     try {
       await navigator.clipboard.writeText(markdown);
       setState("copied");
+      trackCopyContext(competition, markdown.length);
     } catch {
       setState("error");
     }

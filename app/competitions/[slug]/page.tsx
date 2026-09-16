@@ -69,7 +69,7 @@ export default async function CompetitionPage({
       <DiscussionList discussions={competition.discussions} />
       <SolutionList solutions={competition.solutions} />
       <NotebookList notebooks={competition.notebooks} />
-      <AgentContext markdown={agentContext} />
+      <AgentContext competition={competition.slug} markdown={agentContext} />
     </div>
   );
 }
